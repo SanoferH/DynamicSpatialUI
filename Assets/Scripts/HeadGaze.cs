@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HeadGaze : MonoBehaviour
 {
-    [SerializeField] private IconFrameAnimControlller iconController;
+   // [SerializeField] private IconFrameAnimControlller _iconController;
+    [SerializeField] private UIAnimationController _uiAnimationController;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +21,13 @@ public class HeadGaze : MonoBehaviour
         {
             if (hit.collider.GetComponent<RedIconIdentifier>())
             {
-                iconController.GazeHovered();
+                _uiAnimationController.canCallGazeHover = true;
+                _uiAnimationController.canCallGazeUnhover = false;
             }
             else
             {
-                iconController.DefaultAnimation();
+                _uiAnimationController.canCallGazeHover = false;
+                _uiAnimationController.canCallGazeUnhover = true;
             }
         }
 

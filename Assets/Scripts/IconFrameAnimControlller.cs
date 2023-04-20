@@ -34,7 +34,7 @@ public class IconFrameAnimControlller : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(UserPosition.position, transform.position);
-        Debug.Log(dist);
+       // Debug.Log(dist);
 
         if (dist <= 7.5f)
         {
