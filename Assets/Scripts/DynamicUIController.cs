@@ -19,14 +19,14 @@ public class DynamicUIController : MonoBehaviour
     {
         float dist = Vector3.Distance(UserPosition.position, transform.position);
         Debug.Log(dist);
-        if (dist <= 7.5f)
+        if (dist <= 9.0f)
         {
             if (!_notificationShown)
             {
                 NearToPersonalSpace();
             }
             
-            if (dist <= 6.0f)
+            if (dist <= 4.0f)
             {
                 if (!_scrollUIShown)
                 {
